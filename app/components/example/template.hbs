@@ -1,0 +1,19 @@
+<h2>inputs</h2>
+
+{{#each this.inputs as |item index|}}
+  <input id={{concat "val-" index}} value={{item}} />
+{{/each}} 
+
+
+<h2>Ember Angle bracket Input</h2>
+{{#each this.inputs as |item newindex|}}
+  <Input id={{concat "Ival-" newindex}} value={{item}} />
+{{/each}}
+
+<h2>Ember old input</h2>
+{{#each this.inputs as |item newindex|}}
+  {{input id=(concat "Ival-" newindex) value=item}}
+{{/each}}
+<br><br>
+<button type="button" {{on "click" this.addItem}} disabled={{this.loading}}>Add</button>
+<button type="button" {{on "click" this.removeItem}}>Remove</button>
